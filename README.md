@@ -24,9 +24,9 @@ Your Steam install is left alone. Gigagrid installs side by side in `C:\Program 
 ## Requirements
 
 - Wreckfest on Steam, **build 16986367**. The installer refuses any other build. To stop a Steam update from breaking it, set Wreckfest to "Only update this game when I launch it".
-- Windows 10. Windows 11 should work but hasn't been tested yet.
-- Steam running when you click Play.
-- **No mods** for multiplayer. The client and server have to match, so keep the mod list empty.
+- Windows 10. Windows 11 should work, but hasn't been tested yet.
+- Steam has to be running to authenticate game ownership.
+- **No mods** for multiplayer. The client and server have to match, so keep the mod list empty. Both can have mods running, this is supported, but the default is zero mods on either and the 64-car functionality is native.
 
 ## Installing
 
@@ -44,11 +44,9 @@ To update, run the new version's `Gigagrid.exe`, which offers to upgrade your ex
 The server is the same Wreckfest dedicated server with the matching Gigagrid patch. A sample config ships with these settings:
 
 - 64 max players and 48 bots;
-- a 90-second lobby countdown, so all the cars have time to load;
+- a 90-second lobby countdown, so all the bot cars have time to load;
 - no mods;
 - no car restriction.
-
-Don't set car restriction to "host's car" while the host is in something like a big rig. Players who join in a normal car get a black screen.
 
 ## Status
 
@@ -59,6 +57,8 @@ The patch notes list the known issues. The bigger ones:
 - Vote-kick works but its UI looks wrong.
 - The server browser shows 64-player servers as 32.
 - A few singleplayer changes from the older 64-car SP builds aren't in the combined client yet.
+
+# Please report any issues you find.
 
 ## Disclaimer
 

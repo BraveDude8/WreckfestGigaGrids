@@ -31,7 +31,7 @@ It's an unofficial, experimental patch to the game executable. You don't need an
   
 - **Fixes for things that broke past 24.** Running more than 24 cars exposed bugs in stock code. Some crashed, and some just misbehaved quietly: lap counting, kicking players, vote-kick counting, load timeouts, and races starting before every car had loaded. Those are all fixed.
 
-The [patch notes](PATCH_NOTES_v1.0_v1.0.1.md) have the full list.
+The [patch notes](https://github.com/BraveDude8/WreckfestGigaGrids/releases/tag/Release) have the full list.
 
 
 

@@ -1,19 +1,39 @@
+
 ## Wreckfest Gigagrid
+
+
+<img width="960" height="540" alt="20261019202138_1" src="https://github.com/user-attachments/assets/01e034ae-dbca-470f-a53c-24cdb982882b" />
 
 Wreckfest caps races at 24 cars. Gigagrid raises that to 64, in singleplayer and in multiplayer, on the stock tracks you already own.
 
 It's an unofficial, experimental patch to the game executable. You don't need any track mods. There's no separate SP or MP version either: one patched client does both, and there's a matching dedicated server for hosting.
 
-# **Files aren't live yet, give me another couple of days to polish my first public release.**
+
 
 ## What it does
 
 - **64-car races.** Lobbies, standings, results, scoreboards and the HUD all handle 64 entries.
+  
+  <img width="960" height="540" alt="20261019233242_1" src="https://github.com/user-attachments/assets/23883044-8666-40a6-bd20-d324fed3b921" />
+  
 - **Automatic start grids.** Most tracks only have 24 grid slots. Gigagrid generates the rest at race start, adding lanes where the track is wide enough, so any stock track that supports generated grids works with a full field.
+  
+  <img width="960" height="540" alt="20261019233447_1" src="https://github.com/user-attachments/assets/24ad78d3-bd7c-4e7e-b082-e273f04c6894" />
+  
 - **Multiplayer up to 64.** The dedicated server holds 64 slots, fills empty ones with bots, and leaves a slot free so a human can always get in.
+  
+  <img width="960" height="540" alt="20261019233141_1" src="https://github.com/user-attachments/assets/30ff44cc-b64a-4ade-9ede-284efb08f309" />
+  <img width="960" height="540" alt="20261019233223_1" src="https://github.com/user-attachments/assets/9ae3ff43-2016-43a8-95bc-565726b79911" />
+  
+- **Replay system rewritten for 64 cars.** A lot of code changes and a few UI changes to make it behave.
+  
+  <img width="960" height="540" alt="20261019233508_1" src="https://github.com/user-attachments/assets/87ecdba0-4773-405d-a6ff-9be78060d339" />
+  
 - **Fixes for things that broke past 24.** Running more than 24 cars exposed bugs in stock code. Some crashed, and some just misbehaved quietly: lap counting, kicking players, vote-kick counting, load timeouts, and races starting before every car had loaded. Those are all fixed.
 
 The [patch notes](PATCH_NOTES_v1.0_v1.0.1.md) have the full list.
+
+
 
 ## How it's distributed
 
@@ -21,12 +41,16 @@ We don't ship the game or any of its files. The download has a small launcher, a
 
 Your Steam install is left alone. Gigagrid installs side by side in `C:\Program Files\Wreckfest Gigagrid` and points at your Steam game data. It keeps its own saves in `%LOCALAPPDATA%\Wreckfest Gigagrid`, and copies your Steam save into them each time you play. In the future it'll probably copy progress back on shutdown, I'm just being cautious for now.
 
+
+
 ## Requirements
 
 - Wreckfest on Steam, **build 16986367**. The installer refuses any other build. To stop a Steam update from breaking it, set Wreckfest to "Only update this game when I launch it".
 - Windows 10. Windows 11 should work, but hasn't been tested yet.
 - Steam has to be running to authenticate game ownership.
 - **No mods** for multiplayer. The client and server have to match, so keep the mod list empty. Both can have mods running, this is supported, but the default is zero mods on either and the 64-car functionality is native.
+
+
 
 ## Installing
 
@@ -44,6 +68,8 @@ The launcher isn't signed, so Windows SmartScreen will probably warn you. Click 
 
 To update, run the new version's `Gigagrid.exe`, which offers to upgrade your existing install. To uninstall, open the launcher and click Remove. Your Gigagrid saves are kept.
 
+
+
 ## Hosting a server
 
 The server is the same Wreckfest dedicated server with the matching Gigagrid patch. A sample config ships with these settings:
@@ -53,11 +79,15 @@ The server is the same Wreckfest dedicated server with the matching Gigagrid pat
 - no mods;
 - no car restriction.
 
+
+
 ## Status
 
 This is a playtest build. It has been run a lot with one human and 63 bots, in both singleplayer and multiplayer. It has **not** been tested yet with several humans in one server, on Windows 11, or with Steam libraries on other drives. That's what the current playtests are for.
 
 # Please report any issues you find.
+
+
 
 ## Disclaimer
 

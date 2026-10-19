@@ -14,20 +14,20 @@ It's an unofficial, experimental patch to the game executable. You don't need an
 
 - **64-car races.** Lobbies, standings, results, scoreboards and the HUD all handle 64 entries.
   
-  <img width="960" height="540" alt="20261019233242_1" src="https://github.com/user-attachments/assets/23883044-8666-40a6-bd20-d324fed3b921" />
+  <img width="720" height="405" alt="20261019233242_1" src="https://github.com/user-attachments/assets/23883044-8666-40a6-bd20-d324fed3b921" />
   
 - **Automatic start grids.** Most tracks only have 24 grid slots. Gigagrid generates the rest at race start, adding lanes where the track is wide enough, so any stock track that supports generated grids works with a full field.
   
-  <img width="960" height="540" alt="20261019233447_1" src="https://github.com/user-attachments/assets/24ad78d3-bd7c-4e7e-b082-e273f04c6894" />
+  <img width="720" height="405" alt="20261019233447_1" src="https://github.com/user-attachments/assets/24ad78d3-bd7c-4e7e-b082-e273f04c6894" />
   
 - **Multiplayer up to 64.** The dedicated server holds 64 slots, fills empty ones with bots, and leaves a slot free so a human can always get in.
   
-  <img width="960" height="540" alt="20261019233141_1" src="https://github.com/user-attachments/assets/30ff44cc-b64a-4ade-9ede-284efb08f309" />
-  <img width="960" height="540" alt="20261019233223_1" src="https://github.com/user-attachments/assets/9ae3ff43-2016-43a8-95bc-565726b79911" />
+  <img width="720" height="405" alt="20261019233141_1" src="https://github.com/user-attachments/assets/30ff44cc-b64a-4ade-9ede-284efb08f309" />
+  <img width="720" height="405" alt="20261019233223_1" src="https://github.com/user-attachments/assets/9ae3ff43-2016-43a8-95bc-565726b79911" />
   
 - **Replay system rewritten for 64 cars.** A lot of code changes and a few UI changes to make it behave.
   
-  <img width="960" height="540" alt="20261019233508_1" src="https://github.com/user-attachments/assets/87ecdba0-4773-405d-a6ff-9be78060d339" />
+  <img width="720" height="405" alt="20261019233508_1" src="https://github.com/user-attachments/assets/87ecdba0-4773-405d-a6ff-9be78060d339" />
   
 - **Fixes for things that broke past 24.** Running more than 24 cars exposed bugs in stock code. Some crashed, and some just misbehaved quietly: lap counting, kicking players, vote-kick counting, load timeouts, and races starting before every car had loaded. Those are all fixed.
 

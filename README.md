@@ -32,9 +32,14 @@ Your Steam install is left alone. Gigagrid installs side by side in `C:\Program 
 
 1. Download the release ZIP and check its SHA-256 against the one on the release page.
 2. Extract it and run `Gigagrid.exe`. It finds your Steam Wreckfest on its own.
+
+<img width="1352" height="686" alt="image" src="https://github.com/user-attachments/assets/bf8ee79b-b6a5-46c5-937c-2395d249b379" />
+
 3. Click Install and accept the admin prompt. It takes a few minutes.
 4. Start the game from the **Wreckfest Gigagrid** shortcut.
 
+  <img width="608" height="259" alt="image" src="https://github.com/user-attachments/assets/aed1bb15-775c-4b35-a6b4-918eee9afb4a" />
+  
 The launcher isn't signed, so Windows SmartScreen will probably warn you. Click "More info", then "Run anyway".
 
 To update, run the new version's `Gigagrid.exe`, which offers to upgrade your existing install. To uninstall, open the launcher and click Remove. Your Gigagrid saves are kept.

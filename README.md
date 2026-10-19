@@ -19,7 +19,7 @@ The [patch notes](PATCH_NOTES_v1.0_v1.0.1.md) have the full list.
 
 We don't ship the game or any of its files. The download has a small launcher, a patch recipe and a list of file hashes. When you install, the launcher reads your own Steam copy of Wreckfest and rebuilds the patched exe from it. Before it changes anything it checks that the result matches the expected hash exactly.
 
-Your Steam install is left alone. Gigagrid installs side by side in `C:\Program Files\Wreckfest Gigagrid` and points at your Steam game data. It keeps its own saves in `%LOCALAPPDATA%\Wreckfest Gigagrid`, and copies your Steam save into them each time you play.
+Your Steam install is left alone. Gigagrid installs side by side in `C:\Program Files\Wreckfest Gigagrid` and points at your Steam game data. It keeps its own saves in `%LOCALAPPDATA%\Wreckfest Gigagrid`, and copies your Steam save into them each time you play. In the future it'll probably copy progress back on shutdown, I'm just being cautious for now.
 
 ## Requirements
 
@@ -51,12 +51,6 @@ The server is the same Wreckfest dedicated server with the matching Gigagrid pat
 ## Status
 
 This is a playtest build. It has been run a lot with one human and 63 bots, in both singleplayer and multiplayer. It has **not** been tested yet with several humans in one server, on Windows 11, or with Steam libraries on other drives. That's what the current playtests are for.
-
-The patch notes list the known issues. The bigger ones:
-
-- Vote-kick works but its UI looks wrong.
-- The server browser shows 64-player servers as 32.
-- A few singleplayer changes from the older 64-car SP builds aren't in the combined client yet.
 
 # Please report any issues you find.
 

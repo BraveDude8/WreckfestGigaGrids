@@ -4,6 +4,8 @@ Wreckfest caps races at 24 cars. Gigagrid raises that to 64, in singleplayer and
 
 It's an unofficial, experimental patch to the game executable. You don't need any track mods. There's no separate SP or MP version either: one patched client does both, and there's a matching dedicated server for hosting.
 
+**Files aren't live yet, give me another couple of days to polish my first public release.**
+
 ## What it does
 
 - **64-car races.** Lobbies, standings, results, scoreboards and the HUD all handle 64 entries.

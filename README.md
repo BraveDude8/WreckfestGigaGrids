@@ -20,8 +20,13 @@ It's an unofficial, experimental patch to the game executable. You don't need an
 - **Automatic start grids.** Most tracks only have 24 grid slots. Gigagrid generates the rest at race start, adding lanes where the track is wide enough, so any stock track that supports generated grids works with a full field.
   
   <img width="720" height="405" alt="20261019233447_1" src="https://github.com/user-attachments/assets/24ad78d3-bd7c-4e7e-b082-e273f04c6894" />
+
+  If you're playing a mod track with manually placed grid slots, you can choose to override them with automatic grid slots to load up to 64 cars on any mod track.
+
+  <img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/3bd0fc52-f821-4d9c-9b29-c8ad03571722" />
   
-- **Multiplayer up to 64.** The dedicated server holds 64 slots, fills empty ones with bots, and leaves a slot free so a human can always get in.
+- **Multiplayer with up to 64 real people.** Probably. I haven't tested it yet.
+- The dedicated server holds 64 slots, fills empty ones with bots, and leaves a slot free so a human can always get in.
   
   <img width="720" height="405" alt="20261019233141_1" src="https://github.com/user-attachments/assets/30ff44cc-b64a-4ade-9ede-284efb08f309" />
   <img width="720" height="405" alt="20261019233223_1" src="https://github.com/user-attachments/assets/9ae3ff43-2016-43a8-95bc-565726b79911" />
@@ -30,7 +35,7 @@ It's an unofficial, experimental patch to the game executable. You don't need an
   
   <img width="720" height="405" alt="20261019233508_1" src="https://github.com/user-attachments/assets/87ecdba0-4773-405d-a6ff-9be78060d339" />
   
-- **Fixes for things that broke past 24.** Running more than 24 cars exposed bugs in stock code. Some crashed, and some just misbehaved quietly: lap counting, kicking players, vote-kick counting, load timeouts, and races starting before every car had loaded. Those are all fixed.
+- **Many, many fixes for things that broke past 24 cars.** Running more than 24 cars exposed bugs in stock code. Some crashed, and some just misbehaved quietly: lap counting, kicking players, vote-kick counting, load timeouts, and races starting before every car had loaded. Those are all fixed.
 
 The [patch notes](https://github.com/BraveDude8/WreckfestGigaGrids/releases/tag/Release) have the full list.
 
@@ -49,16 +54,17 @@ Your Steam install is left alone. Gigagrid installs side by side in `C:\Program 
 - Wreckfest on Steam, **build 16986367**. The installer refuses any other build. To stop a Steam update from breaking it, set Wreckfest to "Only update this game when I launch it".
 - Windows 10. Windows 11 should work, but hasn't been tested yet.
 - Steam has to be running to authenticate game ownership.
-- **No mods** for multiplayer. The client and server have to match, so keep the mod list empty. Both can have mods running, this is supported, but the default is zero mods on either and the 64-car functionality is native.
+- A note for mods - standard Wreckfest rules, the client and server have to match, but the Gigagrid client itself is technically not a "mod" so a stock Gigagrid server will list 0 mods.
+- Both can have mods running, this is supported, but the default is zero mods on either and the 64-car functionality is native to Gigagrid.
 
 
 
 ## Installing
 
-1. Download the release ZIP and check its SHA-256 against the one on the release page.
+1. Download the release ZIP.
 2. Extract it and run `Gigagrid.exe`. It finds your Steam Wreckfest on its own.
 
-<img width="1352" height="686" alt="image" src="https://github.com/user-attachments/assets/bf8ee79b-b6a5-46c5-937c-2395d249b379" />
+<img width="676" height="343" alt="image" src="https://github.com/user-attachments/assets/bf8ee79b-b6a5-46c5-937c-2395d249b379" />
 
 3. Click Install and accept the admin prompt. It takes a few minutes.
 4. Start the game from the **Wreckfest Gigagrid** shortcut.

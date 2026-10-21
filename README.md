@@ -5,7 +5,7 @@
 <img width="720" height="405" alt="wreckfest-64-car-grid" src="https://github.com/user-attachments/assets/38afd92b-59f9-4a69-be7c-96dbe8d2c47b" />
 
 
-Wreckfest caps races at 24 cars. Gigagrid raises that to 64, in singleplayer and in multiplayer, on the stock tracks you already own.
+Wreckfest caps races at 24 cars. Gigagrid raises that to 64, in singleplayer and in multiplayer, on every racetrack.
 
 It's an unofficial, experimental patch to the game executable. You don't need any track mods. There's no separate SP or MP version either: one patched client does both, and there's a matching dedicated server for hosting.
 

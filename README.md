@@ -2,7 +2,8 @@
 
 ## Wreckfest Gigagrid
 
-<img width="720" height="405" alt="wreckfest-64-car-grid" src="https://github.com/user-attachments/assets/38afd92b-59f9-4a69-be7c-96dbe8d2c47b" />
+<img width="720" height="405" alt="wreckfest-64-car-grid" src="https://github.com/user-attachments/assets/9f32c432-8937-4624-b174-8e49b3ce4ff5" />
+
 
 
 Wreckfest caps races at 24 cars. Gigagrid raises that to 64, in singleplayer and in multiplayer, on every racetrack.

@@ -1,8 +1,6 @@
+# Wreckfest Gigagrid
 
-
-## Wreckfest Gigagrid
-
-<img width="720" height="405" alt="wreckfest-64-car-grid" src="https://github.com/user-attachments/assets/9f32c432-8937-4624-b174-8e49b3ce4ff5" />
+<img width="720" height="405" alt="wreckfest-64-car-grid-2s" src="https://github.com/user-attachments/assets/5c07401e-09df-4012-a572-e8550a0c78f8" />
 
 
 

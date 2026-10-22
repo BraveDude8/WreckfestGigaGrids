@@ -94,6 +94,58 @@ This is a playtest build. It has been run a lot with one human and 63 bots, in b
 # Please report any issues you find.
 
 
+| Area | Feature | Status | Notes |
+|---|---|---|---|
+| Capacity | 63 AI + 1 player | **Working** | Tested in singleplayer and multiplayer races. |
+| Capacity | 64 AI on a dedicated server | **Working** | Full bot rosters load and operate successfully. |
+| Capacity | More than 24 human players in one lobby | Untested | Large AI fields do not verify human connection capacity. |
+| Capacity | 64 human players | Untested | Requires a coordinated multiplayer test. |
+| Capacity | Multiple humans with AI at 64 total participants | Untested | Confirmed large-field tests used one human player. |
+| Capacity | More than 64 participants | Untested | No confirmed gameplay support. |
+| Events | Banger races | **Working** | Multiple large-field races completed successfully. |
+| Events | Derbies with sufficient manually authored starts | **Working** | Tested with 64 cars on an arena containing 64 starts. |
+| Events | Expanded derbies without sufficient manually authored starts | Not working | Automatic grid expansion does not currently support derbies. |
+| Events | Elimination races | Untested | Expanded-field behavior has not been verified. |
+| Events | Team races | Untested | Expanded-field placement and team logic need testing. |
+| Events | Team derbies / team deathmatch | Untested | Expanded-field behavior has not been verified. |
+| Events | Last-man-standing variants | Untested | Expanded-field behavior has not been verified. |
+| Events | Tag modes | Untested | Expanded-field behavior has not been verified. |
+| Events | Career events | Untested | Grid sizes, heats and round transitions need verification. |
+| Events | Tournament / cup events | Untested | Event progression and rewards need verification. |
+| Grids | Expanded automatic race grids | **Working** with limitations | Tested on several tracks; as long as you can physically fit the cars on the track, you're good to go. |
+| Grids | Automatic fallback when authored starts are insufficient | **Working** with limitations | Supported for ordinary Banger races. Track coverage remains incomplete. |
+| Grids | Preserving sufficient manually authored starts | Further testing needed | Implemented and checked offline; broader gameplay coverage is pending. |
+| Grids | Automatic Grid option: On | **Working** | Corrected behavior verified on Tribend Main Circuit. |
+| Grids | Automatic Grid option: Off | **Working** | Uses stock grid behavior while retaining the selected opponent count. |
+| Grids | Oversized fields with Automatic Grid disabled | **Working** | Opponent count is limited to the maximum manual grid slot count for that event. |
+| Grids | Saving the Automatic Grid preference | **Working** | The selected setting persists across restarts. |
+| Grids | Rallycross layouts with short starting spurs | Known issue | Expanded grids can extend off-road and cause placement problems. |
+| Grids | All stock tracks and layouts | Further testing needed | Full 64-car coverage has not been established. |
+| Grids | All Workshop tracks | Further testing needed | Compatibility depends on the track layout and available starts. |
+| Grids | All vehicle sizes and mixed fields | Further testing needed | Placement needs broader testing with different vehicle dimensions. |
+| Multiplayer | Dedicated server startup and local joining | **Working** | Verified with the current client/server pair. |
+| Multiplayer | v1.0.4 race with 1 human + 63 AI | **Working** | Race completed successfully. |
+| Multiplayer | v1.0.4 leave and rejoin | **Working** | Confirmed through manual testing. |
+| Multiplayer | Joining from another PC over LAN | Untested | Current confirmed connection testing used the same PC. |
+| Multiplayer | Internet / WAN connections | Untested | External connection testing is pending. |
+| Multiplayer | LAN discovery across different launch orders | Further testing needed | Server-first discovery worked; other launch orders need verification. |
+| Multiplayer | Modded client/server compatibility | Further testing needed | Matching mod configurations need broader testing. |
+| Multiplayer | High-slot participant removal and rejoining | **Working** | Controlled tests passed after fixing a high-slot removal crash. |
+| Multiplayer | Repeated races and automatic lobby return | **Working** | Passed repeated short-session tests. |
+| Multiplayer | Vote-kick / vote-ban with multiple humans | Untested | Offline checks passed; successful multiplayer voting needs testing. |
+| Multiplayer | Multi-hour / 24-hour hosting | Untested | Long-duration stability testing is pending. |
+| Multiplayer | Dedicated server shutdown | Further testing needed | Manual testing passed, but an automated shutdown result still needs reconciliation. |
+| Gameplay | Expanded participant-count HUD | **Working** | Verified through manual testing. |
+| Gameplay | Wrong-way warning fixes | **Working** | Verified through manual testing. |
+| Gameplay | Post-race ghosting and flicker fixes | **Working** | Verified through manual testing. |
+| Gameplay | Vehicle resets and early-finisher behavior | Further testing needed | Physical-control checks remain incomplete. |
+| Gameplay | Timers, pickups and scoring for slots 25–64 | Further testing needed | Full high-slot gameplay coverage is pending. |
+| Gameplay | Team assignment and scoring above stock limits | Untested | Requires dedicated team-mode testing. |
+| Gameplay | Replay and race restart | **Working** | Replay view cycles between all 64 cars, UI redesigned to handle it. |
+| Rendering | Car-part visibility under heavy 64-car load | Known issue | A targeted fix passed testing and is planned for v1.0.5. |
+| Performance | Ten-lap 64-car singleplayer races | **Working** | Completed benchmark runs are available, approx 20% framerate loss compared to 24 cars, GPU limited. |
+| Performance | Performance across different tracks and hardware | Further testing needed | Current measurements cover a limited test setup. |
+
 
 ## Disclaimer
 

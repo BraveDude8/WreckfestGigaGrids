@@ -101,7 +101,7 @@ This is a playtest build. It has been run a lot with one human and 63 bots, in b
 | Capacity | More than 24 human players in one lobby | Untested | Large AI fields do not verify human connection capacity. |
 | Capacity | 64 human players | Untested | Requires a coordinated multiplayer test. |
 | Capacity | Multiple humans with AI at 64 total participants | Untested | Confirmed large-field tests used one human player. |
-| Capacity | More than 64 participants | Untested | No confirmed gameplay support. |
+| Capacity | More than 64 participants | Untested | Next milestone will be 96, paused at 64 for stability/refinement for now. |
 | Events | Banger races | **Working** | Multiple large-field races completed successfully. |
 | Events | Derbies with sufficient manually authored starts | **Working** | Tested with 64 cars on an arena containing 64 starts. |
 | Events | Expanded derbies without sufficient manually authored starts | Not working | Automatic grid expansion does not currently support derbies. |

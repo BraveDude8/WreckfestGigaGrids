@@ -18,7 +18,7 @@ It's an unofficial, experimental patch to the game executable. You don't need an
   
 - **Automatic start grids.** Most tracks only have 24 grid slots. Gigagrid generates the rest at race start, adding lanes where the track is wide enough, so any stock track that supports generated grids works with a full field.
   
-  <img width="720" height="405" alt="20261019233447_1" src="https://github.com/user-attachments/assets/24ad78d3-bd7c-4e7e-b082-e273f04c6894" />
+  <img width="720" height="405" alt="wreckfest thumbnail 3 small" src="https://github.com/user-attachments/assets/ccc991cf-62f3-412b-9e6d-ba8727bcf7e6" />
 
   If you're playing a mod track with manually placed grid slots, you can choose to override them with automatic grid slots to load up to 64 cars on any mod track.
 

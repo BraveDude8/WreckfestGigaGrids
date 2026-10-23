@@ -2,10 +2,12 @@
 
 <img width="720" height="405" alt="wreckfest-64-car-grid-2s" src="https://github.com/user-attachments/assets/5c07401e-09df-4012-a572-e8550a0c78f8" />
 
+<br>
+<br>
 
 <p align="center">
   <a href="https://github.com/BraveDude8/WreckfestGigaGrids/releases/latest">
-    <img src="download-button.svg" alt="Download latest release" height="128">
+    <img src="download-button.svg" alt="Download latest release" height="64">
   </a>
   <br>
   <sub><b>Click the button, then click the <code>.zip</code> under "Assets" to download.</b></sub>

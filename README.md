@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/BraveDude8/WreckfestGigaGrids/releases/latest">
-    <img src="https://img.shields.io/github/v/release/BraveDude8/WreckfestGigaGrids?style=for-the-badge&label=%E2%AC%87%20DOWNLOAD&color=e8590c&labelColor=1f1f1f" alt="Download latest release" height="128">
+    <img src="download-button.svg" alt="Download latest release" height="128">
   </a>
   <br>
   <sub><b>Click the button, then click the <code>.zip</code> under "Assets" to download.</b></sub>

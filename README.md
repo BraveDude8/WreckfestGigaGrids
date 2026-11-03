@@ -91,12 +91,13 @@ Play starts the game straight away. The full file check only runs when you press
 1. Download the release ZIP.
 2. Extract it and run `Gigagrid.exe`. It finds your Steam Wreckfest on its own.
 
-<img width="676" height="343" alt="image" src="https://github.com/user-attachments/assets/bf8ee79b-b6a5-46c5-937c-2395d249b379" />
+<img width="608" alt="image" src="https://github.com/user-attachments/assets/d7b828ea-2412-4720-830c-8182cfbc95fe" />
+
 
 3. Click Install and accept the admin prompt. It takes a few minutes.
 4. Start the game from the **Wreckfest Gigagrid** shortcut.
 
-  <img width="608" height="259" alt="image" src="https://github.com/user-attachments/assets/aed1bb15-775c-4b35-a6b4-918eee9afb4a" />
+<img width="608" alt="image" src="https://github.com/user-attachments/assets/705e2119-1b3a-4c08-ba95-060227601494" />
   
 The launcher isn't signed, so Windows SmartScreen will probably warn you. Click "More info", then "Run anyway".
 

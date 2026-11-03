@@ -34,8 +34,12 @@ It's an unofficial, experimental patch to the game executable. You don't need an
   If you're playing a mod track with manually placed grid slots, you can choose to override them with automatic grid slots to load up to 64 cars on any mod track.
 
   <img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/3bd0fc52-f821-4d9c-9b29-c8ad03571722" />
-  
-- **Multiplayer with up to 64 real people.** Probably. I haven't tested it yet.
+
+- **64-car derbies (new in v1.0.5).** In singleplayer derby events, cars 25-64 now get proper start positions, so you can run a full 64-car derby on the stock arenas. The arena's own start positions are used first.
+- **Ghost start and stuck-AI reset (new in v1.0.5).** In singleplayer races every car starts as a ghost, so a full grid can spread out instead of piling up at the first corner. Ghosts are see-through and can't be hit. You can switch it off or set it from 1 to 60 seconds (default 15) in Event Options. AI cars that get stuck are reset automatically, derby included.
+- **HUD editor (new in v1.0.5).** The bundled **wf_hud_layout** editor lets you move, resize and hide parts of the race HUD in game. Press <kbd>F8</kbd> in a race to open it, <kbd>F9</kbd> to save and <kbd>F10</kbd> to reload. Your layout applies to every race.
+- **Your progress goes back to Steam (new in v1.0.5).** When you close the game normally, Gigagrid copies that session's progress into your Steam save. Your Steam save is backed up first, and every write is checked. Every Play starts from your Steam progress.
+- **Multiplayer with up to 64 real people.** Probably. I haven't tested it with several people yet.
 - The dedicated server holds 64 slots, fills empty ones with bots, and leaves a slot free so a human can always get in.
   
   <img width="720" height="405" alt="20261019233141_1" src="https://github.com/user-attachments/assets/30ff44cc-b64a-4ade-9ede-284efb08f309" />
@@ -45,7 +49,13 @@ It's an unofficial, experimental patch to the game executable. You don't need an
   
   <img width="720" height="405" alt="20261019233508_1" src="https://github.com/user-attachments/assets/87ecdba0-4773-405d-a6ff-9be78060d339" />
   
-- **Many, many fixes for things that broke past 24 cars.** Running more than 24 cars exposed bugs in stock code. Some crashed, and some just misbehaved quietly: lap counting, kicking players, vote-kick counting, load timeouts, and races starting before every car had loaded. Those are all fixed.
+- **Many, many fixes for things that broke past 24 cars.** Running more than 24 cars exposed bugs in stock code. Some crashed, and some just misbehaved quietly. These are all fixed:
+  - lap counting;
+  - kicking players and vote-kick counting;
+  - load timeouts, and races starting before every car had loaded;
+  - track voting starting with extra votes for the first track;
+  - car parts disappearing in crowded 64-car scenes;
+  - cars vanishing more than about 2 km from the track's centre on big tracks. They now stay visible up to 8 km out.
 
 The [patch notes](https://github.com/BraveDude8/WreckfestGigaGrids/releases/tag/Release) have the full list.
 
@@ -55,7 +65,14 @@ The [patch notes](https://github.com/BraveDude8/WreckfestGigaGrids/releases/tag/
 
 This repo does not ship the game or any of its files. The download has a small launcher, a patch recipe and a list of file hashes. When you install, the launcher reads your own Steam copy of Wreckfest and rebuilds the patched exe from it. Before it changes anything it checks that the result matches the expected hash exactly.
 
-Your Steam install is left alone. Gigagrid installs side by side in `C:\Program Files\Wreckfest Gigagrid` and points at your Steam game data. It keeps its own saves in `%LOCALAPPDATA%\Wreckfest Gigagrid`, and copies your Steam save into them each time you play. In the future it'll probably copy progress back on shutdown, I'm just being cautious for now.
+Your Steam install is left alone. Gigagrid installs side by side in `C:\Program Files\Wreckfest Gigagrid` and points at your Steam game data. It keeps its own working profile in `%LOCALAPPDATA%\Wreckfest Gigagrid`.
+
+As of v1.0.5, saves work both ways:
+- Each Play starts from your Steam save.
+- When you close the game normally, the session's progress is copied back to Steam.
+- Your Steam save is backed up before every write.
+
+Play starts the game straight away. The full file check only runs when you press **Verify files**.
 
 
 
@@ -86,15 +103,20 @@ The launcher isn't signed, so Windows SmartScreen will probably warn you. Click 
 To update, run the new version's `Gigagrid.exe`, which offers to upgrade your existing install. To uninstall, open the launcher and click Remove. Your Gigagrid saves are kept.
 
 
-
 ## Hosting a server
 
-The server is the same Wreckfest dedicated server with the matching Gigagrid patch. A sample config ships with these settings:
+The server is the same Wreckfest dedicated server with the matching Gigagrid patch. Download `Wreckfest-Gigagrid-Server-v1.0.5.zip`, extract it to a short folder path and run `GigagridServer.exe`. The server instructions on the release page cover install, ports and bots.
 
-- 64 max players and 48 bots;
-- a 90-second lobby countdown, so all the bot cars have time to load;
-- no mods;
-- no car restriction.
+- **Version:** everyone must be on v1.0.5. v1.0.4 clients and servers can't join v1.0.5, in either direction.
+- **Events:** racing only. Derby is singleplayer only for now.
+- **Defaults:**
+  - stock gravel racing, 3 laps;
+  - 64 max players and 48 bots;
+  - a random password;
+  - no mods.
+- **Bots:** bots + peak humans + 2 must not exceed `max_players`. The in-game Add Bot button stops at about 25 bots. Use the server console's `/bot` command to fill further.
+- **Ports:** the default query port is now **33549**. If you saved a server config with v1.0.4, change `query_port` from 27019 to 33549.
+- **Stopping:** type `exit` in the server console. Exit code `0xC000013A` is a normal stop.
 
 
 
@@ -112,50 +134,61 @@ This is a playtest build. It has been run a lot with one human and 63 bots, in b
 | Capacity | More than 24 human players in one lobby | Untested | Large AI fields do not verify human connection capacity. |
 | Capacity | 64 human players | Untested | Requires a coordinated multiplayer test. |
 | Capacity | Multiple humans with AI at 64 total participants | Untested | Confirmed large-field tests used one human player. |
-| Capacity | More than 64 participants | Untested | Next milestone will be 96, paused at 64 for stability/refinement for now. |
+| Capacity | More than 64 participants | In development | 128 cars is the target for a later version. |
 | Events | Banger races | **Working** | Multiple large-field races completed successfully. |
-| Events | Derbies with sufficient manually authored starts | **Working** | Tested with 64 cars on an arena containing 64 starts. |
-| Events | Expanded derbies without sufficient manually authored starts | Not working | Automatic grid expansion does not currently support derbies. |
+| Events | Singleplayer derbies with up to 64 cars | **Working** (v1.0.5) | Cars 25-64 get start positions on stock arenas. Leave Automatic Grid on. |
+| Events | Derbies on a server | Not supported | The v1.0.5 server is racing-only. |
+| Events | Team derbies | Not supported | Team derby still uses the stock grid. |
 | Events | Elimination races | Untested | Expanded-field behavior has not been verified. |
 | Events | Team races | Untested | Expanded-field placement and team logic need testing. |
-| Events | Team derbies / team deathmatch | Untested | Expanded-field behavior has not been verified. |
 | Events | Last-man-standing variants | Untested | Expanded-field behavior has not been verified. |
 | Events | Tag modes | Untested | Expanded-field behavior has not been verified. |
-| Events | Career events | Untested | Grid sizes, heats and round transitions need verification. |
+| Events | Career events | Untested | Ghost start is not used in career. Grid sizes, heats and round transitions need verification. |
 | Events | Tournament / cup events | Untested | Event progression and rewards need verification. |
 | Grids | Expanded automatic race grids | **Working** with limitations | Tested on several tracks; as long as you can physically fit the cars on the track, you're good to go. |
 | Grids | Automatic fallback when authored starts are insufficient | **Working** with limitations | Supported for ordinary Banger races. Track coverage remains incomplete. |
 | Grids | Preserving sufficient manually authored starts | Further testing needed | Implemented and checked offline; broader gameplay coverage is pending. |
-| Grids | Automatic Grid option: On | **Working** | Corrected behavior verified on Tribend Main Circuit. |
-| Grids | Automatic Grid option: Off | **Working** | Uses stock grid behavior while retaining the selected opponent count. |
+| Grids | Automatic Grid option: On | **Working** | Recommended setting. |
+| Grids | Automatic Grid option: Off | **Working** with limitations | Uses stock grid behavior. In derbies the game pauses briefly at the start. |
 | Grids | Oversized fields with Automatic Grid disabled | **Working** | Opponent count is limited to the maximum manual grid slot count for that event. |
+| Grids | Mod tracks with their own built-in grid | **Working** with limitations | Capped at that track's start count, with a warning. |
 | Grids | Saving the Automatic Grid preference | **Working** | The selected setting persists across restarts. |
 | Grids | Rallycross layouts with short starting spurs | Known issue | Expanded grids can extend off-road and cause placement problems. |
 | Grids | All stock tracks and layouts | Further testing needed | Full 64-car coverage has not been established. |
 | Grids | All Workshop tracks | Further testing needed | Compatibility depends on the track layout and available starts. |
 | Grids | All vehicle sizes and mixed fields | Further testing needed | Placement needs broader testing with different vehicle dimensions. |
-| Multiplayer | Dedicated server startup and local joining | **Working** | Verified with the current client/server pair. |
-| Multiplayer | v1.0.4 race with 1 human + 63 AI | **Working** | Race completed successfully. |
-| Multiplayer | v1.0.4 leave and rejoin | **Working** | Confirmed through manual testing. |
+| Multiplayer | Dedicated server install, host, stop and remove | **Working** (v1.0.5) | Tested from the release ZIP, hosting normally and as admin. |
+| Multiplayer | v1.0.5 race with 1 human + 31 bots | **Working** | Same-PC join, 3-lap race to results, back to lobby, kicking a bot from slot 31. |
+| Multiplayer | Join and leave with `max_players` 40 and 63 | **Working** | Same-PC LAN. |
 | Multiplayer | Joining from another PC over LAN | Untested | Current confirmed connection testing used the same PC. |
 | Multiplayer | Internet / WAN connections | Untested | External connection testing is pending. |
-| Multiplayer | LAN discovery across different launch orders | Further testing needed | Server-first discovery worked; other launch orders need verification. |
-| Multiplayer | Modded client/server compatibility | Further testing needed | Matching mod configurations need broader testing. |
-| Multiplayer | High-slot participant removal and rejoining | **Working** | Controlled tests passed after fixing a high-slot removal crash. |
+| Multiplayer | LAN discovery across different launch orders | Further testing needed | Start the server first, then the client. |
+| Multiplayer | Modded client/server compatibility | Not supported | The v1.0.5 server only hosts with no mods. |
+| Multiplayer | High-slot participant removal and rejoining | **Working** | Bot removal from high slots tested. Removing a real player in slot 24+ is untested on v1.0.5. |
 | Multiplayer | Repeated races and automatic lobby return | **Working** | Passed repeated short-session tests. |
+| Multiplayer | Track voting | **Working** (v1.0.5) | The first track no longer starts with extra votes. |
 | Multiplayer | Vote-kick / vote-ban with multiple humans | Untested | Offline checks passed; successful multiplayer voting needs testing. |
 | Multiplayer | Multi-hour / 24-hour hosting | Untested | Long-duration stability testing is pending. |
-| Multiplayer | Dedicated server shutdown | Further testing needed | Manual testing passed, but an automated shutdown result still needs reconciliation. |
+| Multiplayer | Dedicated server shutdown | **Working** | Type `exit` in the console. |
 | Gameplay | Expanded participant-count HUD | **Working** | Verified through manual testing. |
+| Gameplay | HUD editor (F8) | **Working** (v1.0.5) | Tested in singleplayer. In multiplayer it is untested. Its key panel is hidden in exclusive fullscreen. |
+| Gameplay | Ghost start | **Working** (v1.0.5) | Singleplayer races. Multiplayer is unchanged. |
+| Gameplay | Stuck-AI reset | **Working** (v1.0.5) | Includes derby. |
 | Gameplay | Wrong-way warning fixes | **Working** | Verified through manual testing. |
 | Gameplay | Post-race ghosting and flicker fixes | **Working** | Verified through manual testing. |
 | Gameplay | Vehicle resets and early-finisher behavior | Further testing needed | Physical-control checks remain incomplete. |
 | Gameplay | Timers, pickups and scoring for slots 25–64 | Further testing needed | Full high-slot gameplay coverage is pending. |
 | Gameplay | Team assignment and scoring above stock limits | Untested | Requires dedicated team-mode testing. |
 | Gameplay | Replay and race restart | **Working** | Replay view cycles between all 64 cars, UI redesigned to handle it. |
-| Rendering | Car-part visibility under heavy 64-car load | Known issue | A targeted fix passed testing and is planned for v1.0.5. |
+| Saves | Progress copied back to Steam on close | **Working** (v1.0.5) | Tested on real saves. Saving can take 30 seconds or more; faster saving is planned. |
+| Saves | Automatic v1.0.4 save migration | **Working** (v1.0.5) | A full backup of the v1.0.4 data is kept. |
+| Saves | Restoring backups from an earlier install | Known issue | Older backups are listed but can't be restored yet. |
+| Rendering | Car-part visibility under heavy 64-car load | **Fixed** (v1.0.5) | The renderer has six times as much room for car parts. |
+| Rendering | Cars far from the track's centre | **Fixed** (v1.0.5) | Cars stay visible up to 8 km out on big tracks. |
+| Rendering | High-DPI / 4K scaled displays | **Fixed** (v1.0.5) | The image is no longer tiled. |
 | Performance | Ten-lap 64-car singleplayer races | **Working** | Completed benchmark runs are available, approx 20% framerate loss compared to 24 cars, GPU limited. |
 | Performance | Performance across different tracks and hardware | Further testing needed | Current measurements cover a limited test setup. |
+
 
 
 ## Disclaimer

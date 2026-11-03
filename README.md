@@ -159,8 +159,7 @@ This is a playtest build. It has been run a lot with one human and 63 bots, in b
 | Grids | All Workshop tracks | Further testing needed | Compatibility depends on the track layout and available starts. |
 | Grids | All vehicle sizes and mixed fields | Further testing needed | Placement needs broader testing with different vehicle dimensions. |
 | Multiplayer | Dedicated server install, host, stop and remove | **Working** (v1.0.5) | Tested from the release ZIP, hosting normally and as admin. |
-| Multiplayer | v1.0.5 race with 1 human + 31 bots | **Working** | Same-PC join, 3-lap race to results, back to lobby, kicking a bot from slot 31. |
-| Multiplayer | Join and leave with `max_players` 40 and 63 | **Working** | Same-PC LAN. |
+| Multiplayer | v1.0.5 race with 1 human + 63 bots | **Working** | Same-PC join, 3-lap race to results, back to lobby, kicking bots, changing tracks, multiple events in a row. |
 | Multiplayer | Joining from another PC over LAN | Untested | Current confirmed connection testing used the same PC. |
 | Multiplayer | Internet / WAN connections | Untested | External connection testing is pending. |
 | Multiplayer | LAN discovery across different launch orders | Further testing needed | Start the server first, then the client. |

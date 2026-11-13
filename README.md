@@ -25,17 +25,20 @@ It's an unofficial, experimental patch to the game executable. You don't need an
 
 - **64-car races.** Lobbies, standings, results, scoreboards and the HUD all handle 64 entries.
   
-  <img width="720" height="405" alt="20261019233242_1" src="https://github.com/user-attachments/assets/23883044-8666-40a6-bd20-d324fed3b921" />
+<img width="720"  alt="20261019233242_1" src="https://github.com/user-attachments/assets/23883044-8666-40a6-bd20-d324fed3b921" />
   
 - **Automatic start grids.** Most tracks only have 24 grid slots. Gigagrid generates the rest at race start, adding lanes where the track is wide enough, so any stock track that supports generated grids works with a full field.
   
-  <img width="720" height="405" alt="wreckfest thumbnail 3 small" src="https://github.com/user-attachments/assets/ccc991cf-62f3-412b-9e6d-ba8727bcf7e6" />
+<img width="720"  alt="wreckfest thumbnail 3 small" src="https://github.com/user-attachments/assets/ccc991cf-62f3-412b-9e6d-ba8727bcf7e6" />
 
-  If you're playing a mod track with manually placed grid slots, you can choose to override them with automatic grid slots to load up to 64 cars on any mod track.
+If you're playing a mod track with manually placed grid slots, you can choose to override them with automatic grid slots to load up to 64 cars on any mod track.
 
-  <img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/3bd0fc52-f821-4d9c-9b29-c8ad03571722" />
+<img width="480"  alt="image" src="https://github.com/user-attachments/assets/3bd0fc52-f821-4d9c-9b29-c8ad03571722" />
 
 - **Experimental: 128 cars in singleplayer (new in v1.0.6).** A launcher option, "Experimental: 128 cars (single-player only)", lets Custom Events go up to 128 cars. It's off by default, and 64 stays the default. It only changes the game on your PC: online games and the server stay at 64. It isn't supported and may crash, stutter or behave oddly, and you need a strong PC. See the Status table below.
+
+<img width="720" alt="gigagrid 128 car" src="https://github.com/user-attachments/assets/b7d31d81-65ea-442c-a039-feb8b32a13a2" />
+
 - **64-car derbies (new in v1.0.5).** In singleplayer derby events, cars 25-64 now get proper start positions, so you can run a full 64-car derby on the stock arenas. The arena's own start positions are used first. As of v1.0.6, team derby also fills to 64 in singleplayer, and the dedicated server can host derby.
 - **New singleplayer options (new in v1.0.6).** A Non-contact option for singleplayer racing modes (Banger, Team Race, Elimination). AI options for singleplayer custom events, all Off by default: AI Ignores Cars, AI Targets Player (with hunting within 50 m), Team Derby 1 vs All, Marked Man, and a Mutators tab in Event Options.
 - **Ghost start and stuck-AI reset (new in v1.0.5).** In singleplayer races cars can start as ghosts, so a full grid can spread out instead of piling up at the first corner. Ghosts are see-through and can't be hit. As of v1.0.6, Ghost Start is **Off by default** in Event Options (if you had it saved as On, your setting is kept), and the duration can be set from 1 to 60 seconds (default 15). Ghosts now become solid in a staggered way, so a ghosted pack no longer becomes solid all at once in one place. Online, the server decides when ghosting ends, so every client sees the same thing. AI cars that get stuck are reset automatically, derby included.

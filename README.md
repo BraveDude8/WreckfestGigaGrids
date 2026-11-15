@@ -27,7 +27,7 @@ It's an unofficial, experimental patch to the game executable. You don't need an
   
 <img width="720"  alt="20261019233242_1" src="https://github.com/user-attachments/assets/23883044-8666-40a6-bd20-d324fed3b921" />
   
-- **Automatic start grids.** Most tracks only have 24 grid slots. Gigagrid generates the rest at race start, adding lanes where the track is wide enough, so any stock track that supports generated grids works with a full field.
+- **Automatic start grids.** Most tracks only have 24 grid slots. Gigagrid generates the rest at race start, adding lanes where the track is wide enough, so any stock track works with a full field provided there is physically enough space to fit the extra cars.
   
 <img width="720"  alt="wreckfest thumbnail 3 small" src="https://github.com/user-attachments/assets/ccc991cf-62f3-412b-9e6d-ba8727bcf7e6" />
 

@@ -55,6 +55,9 @@ If you're playing a mod track with manually placed grid slots, you can choose to
 
   - **Nameplates and minimap:** distance scaling, split position and name boxes, gold, silver and bronze boxes for P1 to P3, position labels past P64, and new GAMEPLAY rows for leader or top-3 markers and lap-down markers on the minimap.
   - **Results:** the SCORE column shows each car's total score, and the four award panels sit in one row above the results table.
+
+<img width="720" alt="20261120225605_1" src="https://github.com/user-attachments/assets/6fdaa221-d89e-411c-968d-97d4b2708e77" />
+
   - **HUD mod 1.5.0:** a settings panel in the menus, minimap options, and optional custom music (off by default) with a now-playing banner.
   - **Experimental ini options** in `gigagrid-grid.ini`, all off or stock by default: cockpit and camera offsets, HUD text colour and outline, wheel damage display, hiding other players' paint, extra garage car stats, single-player respawn rules, auto DNF and a derby contact timer.
   - **Tracks and limits:** tracks with many placed objects no longer fail with "Out of poolmemory!", up to 1,024 track environments (was 128), a far clip distance of 20,000 (was 6,000), and longer replays.

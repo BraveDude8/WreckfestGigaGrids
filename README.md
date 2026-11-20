@@ -50,6 +50,9 @@ If you're playing a mod track with manually placed grid slots, you can choose to
 - **New in v1.0.7.** See the [patch notes](https://github.com/BraveDude8/WreckfestGigaGrids/releases/latest) for the full list.
   - **Multiclass races**, set by the host: 1 to 4 groups of AI classes in the same race, marked with their class colour on the nameplate, the minimap, the position tracker and the results table. With multiclass off, nothing changes.
   - **Mutators:** Last Man Standing changes and Total Destruction, where the AI targets you very aggressively. The Mutators page also has AI Car Rule, Rule Limit, AI Aggression and Expert+ rows.
+
+<img width="720" alt="MUTATORS_PAGE_TABLE" src="https://github.com/user-attachments/assets/eccd006b-c27d-44f0-8cc3-362beca63980" />
+
   - **Nameplates and minimap:** distance scaling, split position and name boxes, gold, silver and bronze boxes for P1 to P3, position labels past P64, and new GAMEPLAY rows for leader or top-3 markers and lap-down markers on the minimap.
   - **Results:** the SCORE column shows each car's total score, and the four award panels sit in one row above the results table.
   - **HUD mod 1.5.0:** a settings panel in the menus, minimap options, and optional custom music (off by default) with a now-playing banner.

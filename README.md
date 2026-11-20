@@ -41,9 +41,25 @@ If you're playing a mod track with manually placed grid slots, you can choose to
 
 - **64-car derbies (new in v1.0.5).** In singleplayer derby events, cars 25-64 now get proper start positions, so you can run a full 64-car derby on the stock arenas. The arena's own start positions are used first. As of v1.0.6, team derby also fills to 64 in singleplayer, and the dedicated server can host derby.
 - **New singleplayer options (new in v1.0.6).** A Non-contact option for singleplayer racing modes (Banger, Team Race, Elimination). AI options for singleplayer custom events, all Off by default: AI Ignores Cars, AI Targets Player (with hunting within 50 m), Team Derby 1 vs All, Marked Man, and a Mutators tab in Event Options.
-- **Ghost start and stuck-AI reset (new in v1.0.5).** In singleplayer races cars can start as ghosts, so a full grid can spread out instead of piling up at the first corner. Ghosts are see-through and can't be hit. As of v1.0.6, Ghost Start is **Off by default** in Event Options (if you had it saved as On, your setting is kept), and the duration can be set from 1 to 60 seconds (default 15). Ghosts now become solid in a staggered way, so a ghosted pack no longer becomes solid all at once in one place. Online, the server decides when ghosting ends, so every client sees the same thing. AI cars that get stuck are reset automatically, derby included.
-- **HUD editor (new in v1.0.5).** The bundled **wf_hud_layout** editor lets you move, resize and hide parts of the race HUD in game. Press <kbd>F8</kbd> in a race to open it, <kbd>F9</kbd> to save and <kbd>F10</kbd> to reload. Your layout applies to every race.
+- **Ghost start and stuck-AI reset (new in v1.0.5).** In singleplayer races cars can start as ghosts, so a full grid can spread out instead of piling up at the first corner. Ghosts are see-through and can't be hit. As of v1.0.6, Ghost Start is **Off by default** in Event Options (if you had it saved as On, your setting is kept), and the duration can be set from 1 to 60 seconds (default 15). In v1.0.7 the end of start ghosting is back to the v1.0.5 behaviour (the staggered end of v1.0.6 is reverted). Ghost Start does not work in multiplayer. AI cars that get stuck are reset automatically, derby included.
+- **HUD editor (new in v1.0.5).** The bundled **wf_hud_layout** editor lets you move, resize and hide parts of the race HUD in game. Press <kbd>F8</kbd> in a race to open it. Your layout applies to every race. v1.0.7 ships HUD mod 1.5.0: <kbd>F8</kbd> in the menus opens a settings panel, the hotkeys are bound by default, and you can change or unbind each key in `wf_hud_layout.ini`.
 - **Your progress goes back to Steam (new in v1.0.5).** When you close the game normally, Gigagrid copies that session's progress into your Steam save. Your Steam save is backed up first, and every write is checked. Every Play starts from your Steam progress.
+
+
+  
+- **New in v1.0.7.** See the [patch notes](https://github.com/BraveDude8/WreckfestGigaGrids/releases/latest) for the full list.
+  - **Multiclass races**, set by the host: 1 to 4 groups of AI classes in the same race, marked with their class colour on the nameplate, the minimap, the position tracker and the results table. With multiclass off, nothing changes.
+  - **Mutators:** Last Man Standing changes and Total Destruction, where the AI targets you very aggressively. The Mutators page also has AI Car Rule, Rule Limit, AI Aggression and Expert+ rows.
+  - **Nameplates and minimap:** distance scaling, split position and name boxes, gold, silver and bronze boxes for P1 to P3, position labels past P64, and new GAMEPLAY rows for leader or top-3 markers and lap-down markers on the minimap.
+  - **Results:** the SCORE column shows each car's total score, and the four award panels sit in one row above the results table.
+  - **HUD mod 1.5.0:** a settings panel in the menus, minimap options, and optional custom music (off by default) with a now-playing banner.
+  - **Experimental ini options** in `gigagrid-grid.ini`, all off or stock by default: cockpit and camera offsets, HUD text colour and outline, wheel damage display, hiding other players' paint, extra garage car stats, single-player respawn rules, auto DNF and a derby contact timer.
+  - **Tracks and limits:** tracks with many placed objects no longer fail with "Out of poolmemory!", up to 1,024 track environments (was 128), a far clip distance of 20,000 (was 6,000), and longer replays.
+  - **Performance:** the game now uploads only the car palette rows that changed each frame. In our 64-car test, v1.0.7 averaged 187.7 FPS against 125.2 FPS for v1.0.6 on the same PC.
+  - **Server:** league result files (`gigagrid_results_<time>.json`), a shuffled event loop (`gg_rotation_mode`, `gg_rotation_exclude_last`), and Add Bot fills to the server maximum minus one.
+  - **Launcher:** the server launcher has a full updater and a GUI for the server config, and save recovery on close asks "Try to fix the save?".
+  - **Multiplayer with up to 64 real people.** Probably. I haven't tested it with several people yet.
+  - The dedicated server holds 64 slots, fills empty ones with bots. Keep bots + the most humans you expect + 2 at 64 or less. As of v1.0.6 it hosts racing, derby, derby deathmatch and elimination race, and has a `/gridslot` command to pin a player to a grid slot. Hosting from the game itself is turned off: use the Gigagrid server.
 
 - **Other additions (new in v1.0.6).**
   - Race awards on the results screen, with the top three for each award.
@@ -51,10 +67,7 @@ If you're playing a mod track with manually placed grid slots, you can choose to
   - "CLIENT PREDICTION TIME" is back in Options > Network, the option from the original 2018 game. "DEFAULT (1800MS)" behaves exactly as before.
   - Nameplate options in Options > Gameplay: "NAMEPLATE DISTANCE", "NAMEPLATE POSITION NUMBER" (race position beside each opponent's name, 1st to 3rd in gold, silver and bronze) and "NAMEPLATE BACKGROUND OPACITY".
   - The two intro logo videos are skipped, and the 3-2-1 countdown and "GO!" have a thin black outline.
-  - On the main menu, Tab steps to the next category, the same as E.
   - The launcher has a dark look, a bug report button and an update check, retries a failed save up to 16 times in the same session, and closes on its own after a successful save.
-- **Multiplayer with up to 64 real people.** Probably. I haven't tested it with several people yet.
-- The dedicated server holds 64 slots, fills empty ones with bots. Keep bots + the most humans you expect + 2 at 64 or less. As of v1.0.6 it hosts racing, derby, derby deathmatch and elimination race, and has a `/gridslot` command to pin a player to a grid slot. Hosting from the game itself is turned off: use the Gigagrid server.
   
   <img width="720" height="405" alt="20261019233141_1" src="https://github.com/user-attachments/assets/30ff44cc-b64a-4ade-9ede-284efb08f309" />
   <img width="720" height="405" alt="20261019233223_1" src="https://github.com/user-attachments/assets/9ae3ff43-2016-43a8-95bc-565726b79911" />
@@ -74,7 +87,9 @@ If you're playing a mod track with manually placed grid slots, you can choose to
   - HUD race position for cars beyond 24 (v1.0.6);
   - AI targeting for all 64 cars (v1.0.6);
   - events whose start points sit inside sub-scenes, such as Salt Valley 2x, Salt Valley chicken and the Gardemoen arena, not getting full grids at 64 (v1.0.6);
-  - online races sometimes skipping straight to results on the client (v1.0.6).
+  - online races sometimes skipping straight to results on the client (v1.0.6);
+  - vehicle mods that override files not being used (v1.0.7);
+  - your car in the garage staying see-through after an event (v1.0.7).
 
 The [patch notes](https://github.com/BraveDude8/WreckfestGigaGrids/releases/latest) have the full list.
 
@@ -109,7 +124,7 @@ Play starts the game straight away. The full file check only runs when you press
 
 ## Installing
 
-1. Download `Wreckfest-Gigagrid-v1.0.6.zip`.
+1. Download `Wreckfest-Gigagrid-v1.0.7-HUD-1.5.0.zip`.
 2. Extract it and run `Gigagrid.exe`. It finds your Steam Wreckfest on its own.
 
 <img width="608" alt="image" src="https://github.com/user-attachments/assets/d7b828ea-2412-4720-830c-8182cfbc95fe" />
@@ -127,26 +142,28 @@ To update, run the new version's `Gigagrid.exe`, which offers to upgrade your ex
 
 ## Hosting a server
 
-The server is the same Wreckfest dedicated server with the matching Gigagrid patch. Download `Wreckfest-Gigagrid-Server-v1.0.6.zip`, extract it to a short folder path and run `GigagridServer.exe`. The server instructions on the release page cover install, ports and bots.
+The server is the same Wreckfest dedicated server with the matching Gigagrid patch. Download `Wreckfest-Gigagrid-Server-v1.0.7.zip`, extract it to a short folder path and run `GigagridServer.exe`. The server instructions on the release page cover install, ports and bots.
 
-- **Version:** everyone must be on v1.0.6. v1.0.5 clients and servers can't join v1.0.6, in either direction.
+- **Version:** use v1.0.7 for both the client and the server.
 - **Events:** racing, derby, derby deathmatch and elimination race. Derby on the server is new in v1.0.6 and has only been tested offline. Team modes are refused.
-- **Hosting from the game** is turned off in v1.0.6. Use the Gigagrid server.
+- **Hosting from the game** is turned off (since v1.0.6). Use the Gigagrid server.
 - **Defaults:**
   - stock gravel racing, 3 laps;
   - 64 max players and 48 bots;
   - a random password;
   - no mods.
-- **Bots:** bots + peak humans + 2 must not exceed `max_players`. The in-game Add Bot button stops at 52 of 64. Use the server console's `/bot` command, or Fill bots in the server launcher, to fill further.
+- **Bots:** bots + peak humans + 2 must not exceed `max_players`. As of v1.0.7, the in-game Add Bot button fills to the server maximum minus one. Fill bots in the server launcher reads the server's player count.
 - **Grid slots:** `/gridslot` pins a player to a grid slot or clears the pin. It doesn't list, save or reload pins.
 - **Ports:** the default query port is **33549**. If you saved a server config with an earlier release and it says `query_port` 27019, change it to 33549.
+- **League results (v1.0.7):** at the end of each race the server writes `gigagrid_results_<time>.json` to a `results` folder in its save folder. It always does this.
+- **Event loop (v1.0.7):** `gg_rotation_mode=1` runs the event list in a shuffled order with no repeats in a pass. `gg_rotation_exclude_last` (0 to 16) keeps the last tracks out of the track vote. Both default to 0, the stock behaviour.
 - **Stopping:** type `exit` in the server console. Exit code `0xC000013A` is a normal stop.
 
 
 
 ## Status
 
-This is a playtest build. It has been run a lot with one human and 63 bots, in both singleplayer and multiplayer. It has **not** been tested yet with several humans in one server, on Windows 11, or with Steam libraries on other drives. Testing with several humans, over the internet and from another PC is planned for v1.0.7.
+This is a playtest build. It has been run a lot with one human and 63 bots, in both singleplayer and multiplayer. It has **not** been tested yet with several humans in one server, on Windows 11, or with Steam libraries on other drives. Testing with several humans, over the internet and from another PC is still planned.
 
 # Please report any issues you find.
 
@@ -159,8 +176,10 @@ This is a playtest build. It has been run a lot with one human and 63 bots, in b
 | Capacity | 64 human players | Untested | Requires a coordinated multiplayer test. |
 | Capacity | Multiple humans with AI at 64 total participants | Untested | Confirmed large-field tests used one human player. |
 | Capacity | 128 cars in singleplayer | Experimental (v1.0.6) | Launcher option, off by default. Online and the server stay at 64. Not supported; may crash, stutter or behave oddly. |
-| Capacity | 128 cars: derby, results, nameplates, position display, replay camera | Not supported | Above 64 cars derby is not supported, and these only cover the first 64 cars. Wreck and assist scoring may be wrong. Nameplate position numbers past 64 are planned for v1.0.7. |
+| Capacity | 128 cars: derby, results, nameplates, position display, replay camera | Not supported | Above 64 cars derby is not supported, and these only cover the first 64 cars. Wreck and assist scoring may be wrong. Nameplate position labels go past P64 as of v1.0.7. |
 | Capacity | 128 cars: big grids, mod tracks, pit-start tracks | Known issue | Some cars may start in a bad spot; mod tracks may misplace extra cars, so use stock tracks. Some pit-start tracks, such as Dakar, drop cars above their start count. |
+| Events | Multiclass races | New (v1.0.7) | Set by the host. 1 to 4 groups of AI classes. |
+| Events | Total Destruction mutator | New (v1.0.7) | AI cars still reset with it on. |
 | Events | Banger races | **Working** | Multiple large-field races completed successfully. |
 | Events | Singleplayer derbies with up to 64 cars | **Working** (v1.0.5) | Cars 25-64 get start positions on stock arenas. Leave Automatic Grid on. |
 | Events | Derbies on a server | Further testing needed (v1.0.6) | Derby and derby deathmatch can be hosted. Only tested offline. |
@@ -186,8 +205,10 @@ This is a playtest build. It has been run a lot with one human and 63 bots, in b
 | Grids | All vehicle sizes and mixed fields | **Working** with limitations | Placement needs broader testing with different vehicle dimensions. |
 | Multiplayer | Dedicated server install, host, stop and remove | **Working** (v1.0.5) | Tested from the release ZIP, hosting normally and as admin. |
 | Multiplayer | v1.0.5 race with 1 human + 63 bots | **Working** | Same-PC join, 3-lap race to results, back to lobby, kicking bots, changing tracks, multiple events in a row. |
-| Multiplayer | Joining from another PC over LAN | Untested | Current confirmed connection testing used the same PC. Planned for v1.0.7. |
-| Multiplayer | Internet / WAN connections | Untested | External connection testing is planned for v1.0.7. |
+| Multiplayer | Joining from another PC over LAN | Untested | Current confirmed connection testing used the same PC. |
+| Multiplayer | Internet / WAN connections | Untested | External connection testing is still planned. |
+| Multiplayer | Joining a full server | Known issue | You may be dropped with "Lost connection". |
+| Multiplayer | Slow track loads | Known issue | A slow PC can be dropped if the track takes more than 30 seconds to load. |
 | Multiplayer | LAN discovery across different launch orders | Further testing needed | Start the server first, then the client. |
 | Multiplayer | Modded client/server compatibility | Not supported | The v1.0.6 server only hosts with no mods. |
 | Multiplayer | High-slot participant removal and rejoining | **Working** | Bot removal from high slots tested. Kicking or banning a real player in slot 24+ is untested, especially during an event. |
@@ -199,24 +220,26 @@ This is a playtest build. It has been run a lot with one human and 63 bots, in b
 | Multiplayer | Multi-hour / 24-hour hosting | Untested | Long-duration stability testing is pending. |
 | Multiplayer | Dedicated server shutdown | **Working** | Type `exit` in the console. |
 | Gameplay | Expanded participant-count HUD | **Working** | Verified through manual testing. |
-| Gameplay | Full leaderboard with more than 24 cars | **Fixed** (v1.0.6) | Shows 24 rows: the leader, then a window of cars around you. Rows 25-64 no longer stack on one another. |
+| Gameplay | Full leaderboard with more than 24 cars | **Fixed** (v1.0.6) | Rows 25-64 no longer stack on one another. As of v1.0.7, with 25 to 64 cars the list keeps your own car in view, and above 64 cars it shows a 24-row window. |
 | Gameplay | HUD editor (F8) | **Working** (v1.0.5) | Tested in singleplayer. In multiplayer it is untested. Its key panel is hidden in exclusive fullscreen. |
-| Gameplay | Ghost start | **Working** (v1.0.5) | Singleplayer races; Off by default since v1.0.6. Online in v1.0.6, the server decides when ghosting ends. |
+| Gameplay | Ghost start | **Working** (v1.0.5) | Singleplayer races; Off by default since v1.0.6. Ghost Start does not work in multiplayer. |
 | Gameplay | Stuck-AI reset | **Working** (v1.0.5) | Includes derby. |
 | Gameplay | Wrong-way warning fixes | **Working** | Verified through manual testing. |
 | Gameplay | Post-race ghosting and flicker fixes | **Working** | Verified through manual testing. |
-| Gameplay | Team assignment and scoring above stock limits | **Working** with limitations | Requires dedicated team-mode testing. With 4 teams, the results screen draws the team score boxes over the race award lists (fix planned for v1.0.7). |
+| Gameplay | Team assignment and scoring above stock limits | **Working** with limitations | Requires dedicated team-mode testing. With 4 teams, the results screen draws the team score boxes over the race award lists (fix planned for a later release). |
 | Gameplay | Replay and race restart | **Working** | Replay view cycles between all 64 cars, UI redesigned to handle it. |
 | Gameplay | Client prediction time | Known issue | A new setting may only take effect after the next lobby or session load, or a restart. 800 ms can't be chosen; the lowest live setting is 884 ms. |
 | Saves | Progress copied back to Steam on close | **Working** (v1.0.5) | Tested on real saves. Faster in v1.0.6, but it can still take 30 seconds or more. A failed save can be retried up to 16 times in the same session, not after a restart. |
 | Saves | Automatic v1.0.4 save migration | **Working** (v1.0.5) | A full backup of the v1.0.4 data is kept. |
 | Saves | Steam Cloud | **Working** (v1.0.6) | Steam Cloud can stay on. A restore that would delete a Cloud-synced file is refused. |
-| Saves | Restoring backups from an earlier install | Known issue | Older backups are listed but can't be restored yet. Planned for v1.0.7. |
-| Launcher | Moving or renaming the install folder | Known issue | The Desktop shortcut keeps pointing to the old folder and Windows says "Problem with Shortcut". Move the folder back to fix it. |
+| Saves | Restoring backups from an earlier install | Known issue | Older backups are listed but can't be restored yet. Planned for a later release. |
+| Launcher | Renaming the install folder | **Fixed** (v1.0.7) | A renamed install folder no longer breaks the Desktop shortcut. |
 | Rendering | Car-part visibility under heavy 64-car load | **Fixed** (v1.0.5) | The renderer has six times as much room for car parts. |
 | Rendering | Cars far from the track's centre | **Fixed** (v1.0.5) | Cars stay visible up to 8 km out on big tracks. |
+| Rendering | Tracks with many placed objects | **Fixed** (v1.0.7) | No more "Out of poolmemory!". |
 | Rendering | High-DPI / 4K scaled displays | **Fixed** (v1.0.5) | The image is no longer tiled. |
-| Rendering | Minimap on big tracks | **Fixed** (v1.0.6) with limitations | Big tracks get eight times the minimap budget. The minimap can sometimes show a detached piece of track or a line that stops short of your car (display only; fix planned for v1.0.7). |
+| Rendering | Minimap on big tracks | **Fixed** (v1.0.6) with limitations | Big tracks get eight times the minimap budget. The minimap can sometimes show a detached piece of track or a line that stops short of your car (display only; fix planned for a later release). |
+| Performance | v1.0.7 against v1.0.6 at 64 cars | **Improved** (v1.0.7) | 187.7 FPS against 125.2 FPS average in our 64-car test on the same PC. |
 | Performance | Ten-lap 64-car singleplayer races | **Working** | Completed benchmark runs are available, approx 20% framerate loss compared to 24 cars, GPU limited. |
 | Performance | 128 cars in singleplayer | Experimental | Expect about 13-14 GB of memory in use and a very high GPU load. |
 | Performance | Performance across different tracks and hardware | Further testing needed | Current measurements cover a limited test setup. |
